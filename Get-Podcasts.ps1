@@ -1,23 +1,27 @@
-$r = Invoke-WebRequest -Uri "https://www.occ.net.nz/church-online"
+param(
+    [string]$url
+)
+
+$r = Invoke-WebRequest -Uri $url
 $audioLinks = $r.parsedhtml.documentElement.getElementsByClassName("sqs-audio-embed")
 
-$sermons = @()
+$podcasts = @()
 foreach($audioLink in $audioLinks){
     $title = (($audioLink.getAttribute("data-title").split("-|:",2)) | Select -Skip 1).Trim()
-    $sermonDate = Get-Date ($audioLink.getAttribute("data-title").split("-|:"))[0]
-    $sermonDuration = (New-TimeSpan -Start (Get-Date) -End (Get-Date).AddMilliseconds($audioLink.getAttribute("data-duration-in-ms")))
+    $podcastDate = Get-Date ($audioLink.getAttribute("data-title").split("-|:"))[0]
+    $podcastDuration = (New-TimeSpan -Start (Get-Date) -End (Get-Date).AddMilliseconds($audioLink.getAttribute("data-duration-in-ms")))
 
-    $sermon = New-Object PSObject -Property @{
+    $podcast = New-Object PSObject -Property @{
         "Title" = $title
-        "Date" = $sermonDate
+        "Date" = $podcastDate
         "Author" = $audioLink.getAttribute("data-author")
         "URL" = $audioLink.getAttribute("data-url")
-        "Duration" = $sermonDuration
+        "Duration" = $podcastDuration
 
     }
-    $sermons += $sermon
+    $podcasts += $podcast
 }
-$sermons
+$podcasts
 
 # now I just need to generate a podcast XML 
 # - http://geekswithblogs.net/Lance/archive/2009/04/21/powershellasp-ndash-generate-an-rss-feed-from-powershell-cmdlets.aspx
