@@ -1,0 +1,36 @@
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Podcast Title Here</title>
+        <image>
+            <url>http://www.example.com/image3000x3000.png</url>
+        </image>
+        <itunes:author>Author</itunes:author>
+        <description>
+            The full length description for your podcast
+        </description>
+        <language>en-us</language>
+        <atom:link href="https://example.podcast.com/podcast.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Fri, 01 Jan 2016 06:00:00 PDT</lastBuildDate>
+        <itunes:explicit>false</itunes:explicit>
+        <itunes:image href="http://www.example.com/image3000x3000.png"/>
+        <itunes:category text="Technology"/>
+        <pubDate>Fri, 01 Jan 2016 06:00:00 PDT</pubDate>
+        <item>
+            <title>Episode Name</title>
+            <link>
+                http://podcast.example.com/episode.mp3
+            </link>
+            <pubDate>Sat, 02 Jan 2016 16:00:00 PDT</pubDate>
+            <description>
+                The full length episode description
+            </description>
+            <enclosure length="123" type="audio/mpeg" url="podcast.mp3"/>
+            <guid>
+                http://podcast.example.com/episode.mp3
+            </guid>
+            <itunes:duration>19:07</itunes:duration>
+            <itunes:image href="http://www.example.com/image3000x3000.png"/>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+    </channel>
+</rss>
