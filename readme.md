@@ -22,4 +22,4 @@ param(
     [string]$sasUri = (Get-Content sas-uri.token)
 )
 ```
-For full instructions, [check out my blog post](https://www.sysadminasaservice.blog)! 
+For full instructions, [check out my blog post](https://www.sysadminasaservice.blog/scraping-podcasts-from-squarespace)! 
