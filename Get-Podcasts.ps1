@@ -1,9 +1,9 @@
 param(
-    [string]$url = "https://www.occ.net.nz/church-online",
-    [string]$blobUrl = "https://sqspodcastscraper.blob.core.windows.net/public",
+    [string]$url = "https://www.websiteiwanttoscrape.com/audio",
+    [string]$blobUrl = "https://myazurestorageacct.blob.core.windows.net/public",
     [string]$podcastImage = "podcast-image.jpg", # 1300x1300 jpg or png https://help.apple.com/itc/podcasts_connect/#/itcb54353390
     [string]$podcastCategory = "Religion &amp; Spirituality", # see https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12
-    [string]$podcastAuthor = "Orewa Community Church",
+    [string]$podcastAuthor = "Author",
     [string]$podcastFile = "podcast.xml",
     [string]$sasUri = (Get-Content sas-uri.token)
 )
