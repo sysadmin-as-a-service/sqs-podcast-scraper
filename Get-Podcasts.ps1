@@ -87,6 +87,7 @@ Write-Host "Pushing podcast feed XML to blob storage" -f Yellow
 # now... push to azure blob
 $headers = @{
     'x-ms-blob-type' = 'BlockBlob'
+    'Content-Type' = 'text/xml'
 }
 
 $r = Invoke-RestMethod -Uri $sasUri -Method PUT -Headers $headers -InFile $podcastFile
